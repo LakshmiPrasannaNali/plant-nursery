@@ -1,0 +1,518 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Landing Page</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+h1 {
+    text-align: center;
+}
+
+.plant-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.plant-card {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.plant-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.price {
+    font-weight: bold;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    background-color:orange;
+    text-decoration: none;
+}
+
+
+.cart {
+      position: fixed; top: 20%; right: 20px;
+      background: white; padding: 1rem; border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2); width: 250px;
+    }
+    .cart h3 { margin-bottom: 0.5rem; }
+    .cart ul { list-style: none; max-height: 150px; overflow-y: auto; padding: 0; }
+    .cart ul li { margin: 5px 0; }
+    .cart p { font-weight: bold; margin-top: 10px; }
+    nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.logo {
+  font-size: 20px;
+}
+</style>
+</head>
+<body>
+  <header>
+    <nav> 
+      <h1 class="logo">🌱 Plants Store</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+         
+      </ul>
+    </nav>
+  </header>
+  <nav>
+        <a href="#indoorplants">In Door Plants</a>
+        <a href="#outdoorplants">Out Door Plants</a>
+        <a href="#floweringplants">Flowering Plants</a>
+        
+    </nav>
+    
+
+    <!-- Cart -->
+  <div class="cart">
+    <h3>🛒 Cart</h3>
+    <ul id="cart-items"></ul>
+    <p>Total: ₹<span id="total">0</span></p>
+  </div> 
+
+    <section id="indoorplants">
+    <div class="container">
+        
+        <div class="plant-grid">
+            <div class="plant-card">
+                <img src="calathea.jpg" alt="Calathea Plant">
+                <h2>Calathea Plant</h2>
+                <p>Lorem ipsum dolor sit consectetur adipiscing elit</p>
+                <div class="info">
+                <p class="price">Rs.309</p>
+                <button onclick="addToCart('calathea')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="plant-card">
+                <img src="desk plant.jpg" alt="Desk Plant">
+                <div class="info">
+                <h2>Desk Plant</h2>
+                <p>Lorem ipsum dolor sit consectetur adipiscing elit</p>
+                <p class="price">Rs.309</p>
+                <button onclick="addToCart('desk plant', 350)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="plant-card">
+                <img src="calathea ai plant.jpg" alt="Calathea ai Plant">
+                <div class="info">
+                <h2>Calathea ai Plant</h2>
+                <p>Lorem ipsum dolor sit consectetur adipiscing elit</p>
+                <p class="price">Rs.299</p>
+                <button onclick="addToCart('calathea ai plant', 350)">Add to Cart</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    </section>
+    <div class="container">
+        
+        <div class="plant-grid">
+            <div class="plant-card">
+                <img src="Tradescantia-Zebrina.jpg" alt="Calathea Plant">
+                <div class="info">
+                <h2>Tardescabtia-zebrina</h2>
+                <p>This is another low-maintenance plant that can be trailed from the door and is ideal for shaded areas. </p>
+                <p class="price">Rs.205</p>
+                <button onclick="addToCart('Tardescabtia-zebrina', 350)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="plant-card">
+                <img src="Snake-Plants.jpg" alt="Desk Plant">
+                <h2>snake Plant</h2>
+                <p>The snake plant has deep green and sharp leaves, without needing maintenance. It is also a good air purifier.</p>
+                <p class="price">Rs.200</p>
+                
+                 <button onclick="addToCart('Snake-Plants')">Add to Cart</button>
+            </div>
+            <div class="plant-card">
+                <img src="ZZ-Plant.jpg" alt="Calathea ai Plant">
+                <h2>zz-plant</h2>
+                <p>Another tropical marvel that is easy to plant and grow. It can also remove several toxins from the air. </p>
+                <p class="price">Rs.309</p>
+                <button onclick="addToCart('zz-plant', 350)">Add to Cart</button>
+            </div>
+           
+        </div>
+    </div>
+    <div class="container">
+        
+        <div class="plant-grid">
+            <div class="plant-card">
+                <img src="Money-Plant.jpg" alt="Calathea Plant">
+                <h2>money Plant</h2>
+                <p>Money plants can be taken care of easily, bringing prosperity and luck to any household.  </p>
+                <p class="price">Rs.249</p>
+                <button onclick="addToCart('Money-Plant', 350)">Add to Cart</button>
+            </div>
+            <div class="plant-card">
+                <img src="Peace-Lily.jpg" alt="Desk Plant">
+                <h2>peace lily </h2>
+                <p>The Peace Lily plant has striking leaves and beautiful flowers, thriving in indirect light. </p>
+                <p class="price">Rs.259</p>
+                <button onclick="addToCart('Peace-Lily', 350)">Add to Cart</button>
+            </div>
+            <div class="plant-card">
+                <img src="Ferns.jpg" alt="Calathea ai Plant">
+                <h2>Ferns</h2>
+                <p>Ferns grow well in part or full-shaded zones. They come with beautiful trailing foliage that is a treat to behold. </p>
+                <p class="price">Rs.339</p>
+                <button onclick="addToCart('ferns', 350)">Add to Cart</button>
+            </div>
+           
+        </div>
+    </div>
+    <div class="container">
+        
+        <div class="plant-grid">
+            <div class="plant-card">
+                <img src="Coleus.jpg" alt="Calathea Plant">
+                <h2>coleus </h2>
+                <p>Coleus has distinctive foliage with numerous colours and patterns. New varieties are being introduced periodically as well. </p>
+                <p class="price">Rs.209</p>
+                <button onclick="addToCart('coleus', 350)">Add to Cart</button>
+            </div>
+            <div class="plant-card">
+                <img src="Lavender.jpg" alt="Desk Plant">
+                <h2>Lavender</h2>
+                <p>Lavender is not just colourful and refreshing, but also delightfully fragrant. The flowers can dry neatly and are mostly put in sachets or potpourri at times.</p>
+                <p class="price">Rs.300</p>
+                <button onclick="addToCart('Lavender', 350)">Add to Cart</button>
+            </div>
+            <div class="plant-card">
+                <img src="Desert-Rose.jpg" alt="Calathea ai Plant">
+                <h2>Desert-Rose</h2>
+                <p>This is a lucky houseplant grown indoors and in gardens. It has a smooth trunk and shorter branches with attractive leaves. </p>
+                <p class="price">Rs.320</p>
+                <button onclick="addToCart('Desert-Rose', 350)">Add to Cart</button>
+            </div>
+           
+        </div>
+    </div>
+    <div class="container">
+        
+        <div class="plant-grid">
+            <div class="plant-card">
+                <img src="Rubber-Plant.jpg" alt="Calathea Plant">
+                <h2>Rubber-Plant</h2>
+                <p>Rubber plants can be positioned anywhere at home for ushering in good luck and fortune. They are symbolic of prosperity and wealth. </p>
+                <p class="price">Rs.149</p>
+                <button onclick="addToCart('Rubber-Plant', 350)">Add to Cart</button>
+            </div>
+            <div class="plant-card">
+                <img src="Monstera.jpg" alt="Desk Plant">
+                <h2>Monstera</h2>
+                <p>Monstera plants are popular choices for their sheer beauty. They prefer brighter light and you should let them dry properly after watering. </p>
+                <p class="price">Rs.209</p>
+                <button onclick="addToCart('Monstera', 350)">Add to Cart</button>
+            </div>
+            <div class="plant-card">
+                <img src="Spider-Plant.jpg" alt="Calathea ai Plant">
+                <h2>Spider-Plant</h2>
+                <p>These plants have arching leaves and are relatively easy to maintain.  They add a vibrant dimension to any outdoor space. </p>
+                <p class="price">Rs.300</p>
+                <button onclick="addToCart('Spider-Plant', 350)">Add to Cart</button>
+            </div>
+           
+        </div>
+    </div>
+    <div class="container">
+        
+        <div class="plant-grid">
+            <div class="plant-card">
+                <img src="Japanese-Aralia.jpg" alt="Calathea Plant">
+                <h2>Japanese-Aralia</h2>
+                <p>The Japanese Aralia comes with lush green foliage and is symbolic of good luck, abundance, and health. </p>
+                <p class="price">Rs.329</p>
+                <button onclick="addToCart('Japanese-Aralia', 350)">Add to Cart</button>
+            </div>
+            <div class="plant-card">
+                <img src="Bird-of-Paradise.jpg" alt="Desk Plant">
+                <h2>Bird-of-Paradise</h2>
+                <p>The plant can add a tropical look and feel to your entrance. It may grow in the shade or sunlight. </p>
+                <p class="price">Rs.329</p>
+                <button onclick="addToCart('Bird-of-Paradise', 350)">Add to Cart</button>
+            </div>
+            <div class="plant-card">
+                <img src="English-Ivy.jpg" alt="Calathea ai Plant">
+                <h2>English-Ivy</h2>
+                <p>This plant is a trailing beauty, which may hang from anywhere on the door or nearby. </p>
+                <p class="price">Rs.300</p>
+                <button onclick="addToCart('English-Ivy', 350)">Add to Cart</button>
+            </div>
+           
+        </div>
+    </div>
+     <section id="floweringplants">
+         <div class="container">
+        
+        <div class="plant-grid">
+            <div class="plant-card">
+                <img src="Petunias.jpg" alt="Petunias">
+                <h2>Petunias</h2>
+                <p>Petunias are vibrant and colourful choices for your front door. You can trail them downwards from a planter or place them in pots near the door. </p>
+                <p class="price">Rs.400</p>
+                <button onclick="addToCart('Petunias', 450)">Add to Cart</button>
+            </div>
+            <div class="plant-card">
+                <img src="Portulaca .jpg" alt="Desk Plant">
+                <h2>Desk Plant</h2>
+                <p>A Brazilian plant, it has colourful and vibrant flowers. It does not require much maintenance and has a special charm of its own. </p>
+                <p class="price">Rs.350</p>
+                <button onclick="addToCart('Portulaca', 350)">Add to Cart</button>
+            </div>
+            <div class="plant-card">
+                <img src="Impatiens.jpg" alt="Calathea ai Plant">
+                <h2>Impatiens</h2>
+                <p>These are colourful flowers that add a distinct charm to gardens. They can be grown anywhere you wish. </p>
+                <p class="price">Rs.209</p>
+                <button onclick="addToCart('Impatiens', 350)">Add to Cart</button>
+            </div>
+            
+        </div>
+    </div> <div class="container">
+        
+        <div class="plant-grid">
+            <div class="plant-card">
+                <img src="Petunia.jpg" alt="Calathea Plant">
+                <h2>Petunia</h2>
+                <p>Petunia is a robust and durable plant that will go well anywhere. </p>
+                <p class="price">Rs.400</p>
+                <button onclick="addToCart('Petunia', 350)">Add to Cart</button>
+            </div>
+            <div class="plant-card">
+                <img src="Marigold.jpg" alt="Desk Plant">
+                <h2>Marigold</h2>
+                <p>Marigold is a common yet appealing flower, which adds a special touch to any outdoor space. </p>
+                <p class="price">Rs.339</p>
+                <button onclick="addToCart('Marigold', 350)">Add to Cart</button>
+            </div>
+            <div class="plant-card">
+                <img src="Rose.jpg" alt="Calathea ai Plant">
+                <h2>Rose</h2>
+                <p>Roses are the chief attractions in any garden and the flowers are tougher than what you think. </p>
+                <p class="price">Rs.209</p>
+                <button onclick="addToCart('Rose', 350)">Add to Cart</button>
+            </div>
+            
+        </div>
+    </div> <div class="container">
+        
+        <div class="plant-grid">
+            <div class="plant-card">
+                <img src="Verbena.jpg" alt="Calathea Plant">
+                <h2>Verbena</h2>
+                <p>Verbena is synonymous with varieties and its essential oils relieve stress. </p>
+                <p class="price">Rs.349</p>
+                <button onclick="addToCart('Verbena', 350)">Add to Cart</button>
+            </div>
+            <div class="plant-card">
+                <img src="Blue-Bacopa.jpg" alt="Desk Plant">
+                <h2>Blue-Bacopa</h2>
+                <p>This is usually grown in containers outdoors, enabling better moisture for the flowering plant. </p>
+                <p class="price">Rs.260</p>
+                <button onclick="addToCart('Blue-Bacopa', 350)">Add to Cart</button>
+            </div>
+            <div class="plant-card">
+                <img src="Ivy-Geranium.jpg" alt="Calathea ai Plant">
+                <h2>Ivy-Geranium</h2>
+                <p>A low-maintenance option, Ivy Geranium grows wonderfully in sunny and hot zones. The blooms look stunning at home! </p>
+                <p class="price">Rs.550</p>
+                <button onclick="addToCart('Ivy-Geranium', 350)">Add to Cart</button>
+            </div>
+            
+        </div>
+    </div> <div class="container">
+        
+        <div class="plant-grid">
+            <div class="plant-card">
+                <img src="Daffodil.jpg" alt="Calathea Plant">
+                <h2>Daffodil</h2>
+                <p>Daffodils have an aura of positivity and are associated with rejuvenation, serenity, and good luck. </p>
+                <p class="price">Rs.549</p>
+                <button onclick="addToCart('Daffodil', 350)">Add to Cart</button>
+            </div>
+            <div class="plant-card">
+                <img src="Jasmine.jpg" alt="Desk Plant">
+                <h2>Jasmine</h2>
+                <p>Jasmine is regarded as auspicious and comes with a signature scent that is hard to miss. </p>
+                <p class="price">Rs.149</p>
+                <button onclick="addToCart('Jasmine', 350)">Add to Cart</button>
+            </div>
+            <div class="plant-card">
+                <img src="Rain-Lilies.jpg" alt="Calathea ai Plant">
+                <h2>Rain-Lilies</h2>
+                <p>These are also called fairy lilies or zephyr lilies and come in white, yellow and pink. </p>
+                <p class="price">Rs.99</p>
+                <button onclick="addToCart('Rain-Lilies', 350)">Add to Cart</button>
+            </div>
+            
+        </div>
+        </div>
+        </section>
+        <section id="outdoorplants">
+            </div> <div class="container">
+        
+        <div class="plant-grid">
+            <div class="plant-card">
+                <img src="parijatam.jpg" alt="Calathea Plant">
+                <h2>parijatam</h2>
+                <p>Daffodils have an aura of positivity and are associated with rejuvenation, serenity, and good luck. </p>
+                <p class="price">Rs.330</p>
+                <button onclick="addToCart('parijatam', 350)">Add to Cart</button>
+            </div>
+            <div class="plant-card">
+                <img src="roadside tree.jpg" alt="Desk Plant">
+                <h2>roadside Plant</h2>
+                <p>Jasmine is regarded as auspicious and comes with a signature scent that is hard to miss. </p>
+                <p class="price">Rs.169</p>
+                <button onclick="addToCart('roadside', 350)">Add to Cart</button>
+            </div>
+            <div class="plant-card">
+                <img src="areca palm.jpg" alt="Calathea ai Plant">
+                <h2>Areca Palm</h2>
+                <p>Areca Palm is good for well-lit indoor spaces. This brings a touch of paradise to the home while enhancing air quality. </p>
+                <p class="price">Rs.199</p>
+                <button onclick="addToCart('areca palm', 350)">Add to Cart</button>
+            </div>
+            
+        </div>
+        </div>
+         </div> <div class="container">
+        
+        <div class="plant-grid">
+            <div class="plant-card">
+                <img src="chelli.jpg" alt="Calathea Plant">
+                <h2>cheli peppers</h2>
+                <p>Growing very simple, chili peppers give a very spicy flavor to the food. Their favorite environment is a warm climate. </p>
+                <p class="price">Rs.149</p>
+                <button onclick="addToCart('chelli', 350)">Add to Cart</button>
+            </div>
+            <div class="plant-card">
+                <img src="bougainvillea.jpg" alt="Desk Plant">
+                <h2>bougainvillea</h2>
+                
+                <p> A magnificent flowering perennial, bougainvillea grows in warm places and provides color and interest to outdoor gardens.</p>
+                <p class="price">Rs.299</p>
+                <button onclick="addToCart('bougainvillea', 350)">Add to Cart</button>
+            </div>
+            <div class="plant-card">
+                <img src="fern.jpg" alt="Calathea ai Plant">
+                <h2>fern</h2>
+                <p> Wonderful for shady spots, ferns thrive in humidity and bring a soft green indoors or in shaded outdoor spaces.</p> 
+                <p class="price">Rs.349</p>
+                <button onclick="addToCart('fern', 350)">Add to Cart</button>
+            </div>
+            
+        </div>
+        </div>
+         </div> <div class="container">
+        
+        <div class="plant-grid">
+            <div class="plant-card">
+                <img src="Umbrella-Palm.jpg" alt="Calathea Plant">
+                <h2>umberalla palm</h2>
+                <div class="info">
+                <p>Umbrella Palm, also known as Cyperus alternifolius or Umbrella Papyrus, is an attractive aquatic or semi-aquatic plant that is often used as an ornamental houseplant </p>
+                <p>Rs.309</p>
+                <button onclick="addToCart('Umbrella-Palm', 350)">Add to Cart</button>
+                 </div>
+            </div>
+            <div class="plant-card">
+                <img src="botinix.jpg" alt="Desk Plant">
+                <h2>Botinix</h2>
+                <p>Botanix Plant Supply grows a varied range of plants that can be used as formal hedges or informal screens. </p>
+                <p class="price">Rs.199</p>
+                <button onclick="addToCart('botinix', 350)">Add to Cart</button>
+            </div>
+            <div class="plant-card">
+                <img src="olea europea.jpg" alt="Calathea ai Plant">
+                <h2>olea europea</h2>
+                <p>Tolley’s Upright’ is a low-fruiting selection of olive with a study and upright branching habit.  </p>
+                <p class="price">Rs.249</p>
+                <button onclick="addToCart('olea europea', 350)">Add to Cart</button>
+            </div>
+            <script>
+            // Save cart in localStorage
+function addToCart(name, price) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push({ name, price });
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert(name + " added to cart!");
+}
+
+function loadCart() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let cartItems = document.getElementById("cartItems");
+  let total = 0;
+  cartItems.innerHTML = "";
+  cart.forEach((item, index) => {
+    cartItems.innerHTML += `<p>${item.name} - ₹${item.price}</p>`;
+    total += item.price;
+  });
+  document.getElementById("total").innerText = "Total: ₹" + total;
+}
+
+// Load cart on cart.html
+if (window.location.pathname.includes("cart.html")) {
+  window.onload = loadCart;
+}
+ function goToLogin() {
+      // redirect to login page
+      window.location.href = "login.html"; 
+    }
+
+       </script>     
+        </div>
+        </div>
+        </section>
+
+        
+</html>
+
