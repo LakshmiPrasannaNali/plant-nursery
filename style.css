@@ -1,0 +1,100 @@
+/* General */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background: #2e7d32;
+  color: #fff;
+  padding: 15px 30px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.logo {
+  font-size: 20px;
+}
+.banner {
+  text-align: center;
+  background: url('https://via.placeholder.com/1200x400') no-repeat center/cover;
+  padding: 80px 20px;
+  color: white;
+}
+.banner h2 { font-size: 40px; }
+.banner .btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #fff;
+  color: #2e7d32;
+  text-decoration: none;
+  font-weight: bold;
+}
+.featured, .shop, .about, .contact, .cart {
+  padding: 40px;
+  text-align: center;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  background: #f9f9f9;
+}
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+button {
+  padding: 10px 15px;
+  margin-top: 10px;
+  border: none;
+  background: #2e7d32;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: auto;
+}
+form input, form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+ .login-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .login-btn:hover {
+      background-color: #45a049;
+
+    }
